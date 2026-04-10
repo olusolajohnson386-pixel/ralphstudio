@@ -3,14 +3,32 @@ import { motion } from "framer-motion";
 import { Send, Mail, MapPin, Clock } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", service: "", projectType: "", message: "", budget: "" });
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent! We'll get back to you within 24 hours.");
-    setForm({ name: "", email: "", service: "", projectType: "", message: "", budget: "" });
+    setSubmitting(true);
+    try {
+      const { error } = await supabase.from("contact_submissions").insert({
+        name: form.name,
+        email: form.email,
+        service: form.service || null,
+        project_type: form.projectType || null,
+        message: form.message,
+        budget: form.budget || null,
+      });
+      if (error) throw error;
+      toast.success("Message sent! We'll get back to you within 24 hours.");
+      setForm({ name: "", email: "", service: "", projectType: "", message: "", budget: "" });
+    } catch {
+      toast.error("Something went wrong. Please try again or email us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
