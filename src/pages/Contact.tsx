@@ -23,7 +23,7 @@ const Contact = () => {
             {/* Info */}
             <div className="space-y-8">
               {[
-                { icon: Mail, title: "Email Us", value: "ralphstudio.org@gmsil.com" },
+                { icon: Mail, title: "Email Us", value: "ralphstudio.org@gmail.com" },
                 { icon: Clock, title: "Response Time", value: "Within 24 hours" },
                 { icon: MapPin, title: "Location", value: "Worldwide (Remote Studio)" },
               ].map(({ icon: Icon, title, value }) => (
