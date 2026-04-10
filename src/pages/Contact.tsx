@@ -127,9 +127,10 @@ const Contact = () => {
               />
               <button
                 type="submit"
-                className="bg-gradient-gold text-primary-foreground px-8 py-3.5 font-semibold rounded-sm tracking-wide hover:opacity-90 transition-opacity inline-flex items-center gap-2"
+                disabled={submitting}
+                className="bg-gradient-gold text-primary-foreground px-8 py-3.5 font-semibold rounded-sm tracking-wide hover:opacity-90 transition-opacity inline-flex items-center gap-2 disabled:opacity-50"
               >
-                Send Message <Send size={16} />
+                {submitting ? "Sending..." : "Send Message"} <Send size={16} />
               </button>
             </motion.form>
           </div>
