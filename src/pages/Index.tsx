@@ -137,12 +137,14 @@ const Index = () => {
             ))}
           </div>
           <div className="text-center mt-10">
-            <Link
-              to="/portfolio"
+            <a
+              href="https://drive.google.com/drive/folders/19Mv-PbDYc8oiQbqCsEWceOZlBaAPXa5V"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gradient-gold text-primary-foreground px-8 py-3.5 font-semibold rounded-sm tracking-wide hover:opacity-90 transition-opacity inline-flex items-center gap-2"
             >
               View Full Portfolio <ArrowRight size={18} />
-            </Link>
+            </a>
           </div>
         </div>
       </section>
