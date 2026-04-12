@@ -6,15 +6,12 @@ import portfolio5 from "@/assets/portfolio-5.jpg";
 import portfolio6 from "@/assets/portfolio-6.jpg";
 
 export const portfolioItems = [
-  { id: 1, title: "Whispers of the Ancient", category: "Fiction", genre: "Fantasy", image: portfolio1, client: "Meridian Publishing" },
-  { id: 2, title: "Eternal Embrace", category: "Fiction", genre: "Romance", image: portfolio2, client: "Aurora Books" },
-  { id: 3, title: "Shadow Protocol", category: "Fiction", genre: "Thriller", image: portfolio3, client: "Darkline Press" },
-  { id: 4, title: "Beyond the Horizon", category: "Fiction", genre: "Sci-Fi", image: portfolio4, client: "Nebula Publishing" },
-  { id: 5, title: "The Mindful Path", category: "Non-Fiction", genre: "Self-Help", image: portfolio5, client: "Clarity Books" },
-  { id: 6, title: "Enchanted Forest", category: "Fiction", genre: "Children's", image: portfolio6, client: "Little Readers Co." },
-  { id: 7, title: "Dark Descent", category: "Book Covers", genre: "Horror", image: portfolio3, client: "Phantom Press" },
-  { id: 8, title: "Cosmic Journey", category: "3D Mockups", genre: "Sci-Fi", image: portfolio4, client: "Stellar Media" },
-  { id: 9, title: "Golden Wisdom", category: "Book Visuals", genre: "Non-Fiction", image: portfolio5, client: "Sage Publications" },
+  { id: 1, title: "Misery – Reimagined", category: "3D Mockups", genre: "Horror", image: portfolio1, client: "Stephen King Collection" },
+  { id: 2, title: "Behind the Shadow", category: "Book Covers", genre: "Dark Fantasy", image: portfolio2, client: "Indie Author" },
+  { id: 3, title: "We Want You", category: "Book Covers", genre: "Horror", image: portfolio3, client: "Phantom Press" },
+  { id: 4, title: "Holmes & Watson", category: "Book Covers", genre: "Mystery", image: portfolio4, client: "Imperato & Frammarino" },
+  { id: 5, title: "Darkness of DNA", category: "Book Covers", genre: "Sci-Fi", image: portfolio5, client: "Akiiki Haynes" },
+  { id: 6, title: "Cover Book Mockup", category: "3D Mockups", genre: "Fiction", image: portfolio6, client: "Creative Studio" },
 ];
 
 export const services = [
