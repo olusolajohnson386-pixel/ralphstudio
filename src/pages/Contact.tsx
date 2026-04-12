@@ -55,6 +55,15 @@ const Contact = () => {
                   </div>
                 </div>
               ))}
+              <a href="https://x.com/Ralphvisual" target="_blank" rel="noopener noreferrer" className="flex gap-4 group">
+                <div className="w-12 h-12 bg-primary/10 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                  <Twitter size={20} className="text-primary" />
+                </div>
+                <div>
+                  <p className="font-display font-semibold text-sm">Follow Us on X</p>
+                  <p className="text-muted-foreground text-sm group-hover:text-foreground transition-colors">@Ralphvisual</p>
+                </div>
+              </a>
             </div>
 
             {/* Form */}
