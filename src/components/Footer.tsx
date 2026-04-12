@@ -16,16 +16,15 @@ const Footer = () => {
               Crafting visual stories that captivate readers before they turn the first page.
             </p>
             <div className="flex gap-4 mt-6">
-              {[Instagram, Linkedin, Youtube].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-10 h-10 rounded-sm bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-colors"
-                  aria-label="Social link"
-                >
-                  <Icon size={18} />
-                </a>
-              ))}
+              <a
+                href="https://x.com/Ralphvisual"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-sm bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-colors"
+                aria-label="Follow us on X"
+              >
+                <Twitter size={18} />
+              </a>
             </div>
           </div>
 
