@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, MapPin, Clock } from "lucide-react";
+import { Send, Mail, MapPin, Clock, Twitter } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
@@ -41,10 +41,10 @@ const Contact = () => {
             {/* Info */}
             <div className="space-y-8">
               {[
-                { icon: Mail, title: "Email Us", value: "ralphstudio.org@gmail.com" },
+                { icon: Mail, title: "Email Us", value: "ralphstudio.org@gmail.com", href: "mailto:ralphstudio.org@gmail.com" },
                 { icon: Clock, title: "Response Time", value: "Within 24 hours" },
                 { icon: MapPin, title: "Location", value: "Worldwide (Remote Studio)" },
-              ].map(({ icon: Icon, title, value }) => (
+              ].map(({ icon: Icon, title, value, href }) => (
                 <div key={title} className="flex gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-sm flex items-center justify-center flex-shrink-0">
                     <Icon size={20} className="text-primary" />
@@ -55,6 +55,15 @@ const Contact = () => {
                   </div>
                 </div>
               ))}
+              <a href="https://x.com/Ralphvisual" target="_blank" rel="noopener noreferrer" className="flex gap-4 group">
+                <div className="w-12 h-12 bg-primary/10 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                  <Twitter size={20} className="text-primary" />
+                </div>
+                <div>
+                  <p className="font-display font-semibold text-sm">Follow Us on X</p>
+                  <p className="text-muted-foreground text-sm group-hover:text-foreground transition-colors">@Ralphvisual</p>
+                </div>
+              </a>
             </div>
 
             {/* Form */}
