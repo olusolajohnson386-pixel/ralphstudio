@@ -41,10 +41,10 @@ const Contact = () => {
             {/* Info */}
             <div className="space-y-8">
               {[
-                { icon: Mail, title: "Email Us", value: "ralphstudio.org@gmail.com" },
+                { icon: Mail, title: "Email Us", value: "ralphstudio.org@gmail.com", href: "mailto:ralphstudio.org@gmail.com" },
                 { icon: Clock, title: "Response Time", value: "Within 24 hours" },
                 { icon: MapPin, title: "Location", value: "Worldwide (Remote Studio)" },
-              ].map(({ icon: Icon, title, value }) => (
+              ].map(({ icon: Icon, title, value, href }) => (
                 <div key={title} className="flex gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-sm flex items-center justify-center flex-shrink-0">
                     <Icon size={20} className="text-primary" />
