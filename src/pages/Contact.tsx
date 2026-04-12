@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, MapPin, Clock } from "lucide-react";
+import { Send, Mail, MapPin, Clock, Twitter } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
