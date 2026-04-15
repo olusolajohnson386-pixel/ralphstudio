@@ -25,6 +25,24 @@ const Footer = () => {
               >
                 <Twitter size={18} />
               </a>
+              <a
+                href="https://www.instagram.com/ralph_studi0/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-sm bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-colors"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram size={18} />
+              </a>
+              <a
+                href="https://web.facebook.com/p/Ralphy-Royale-61573249812789/?_rdc=1&_rdr#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-sm bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-colors"
+                aria-label="Follow us on Facebook"
+              >
+                <Facebook size={18} />
+              </a>
             </div>
           </div>
 
