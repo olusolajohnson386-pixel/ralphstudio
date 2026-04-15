@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Twitter, Mail } from "lucide-react";
+import { Twitter, Mail, Instagram, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
