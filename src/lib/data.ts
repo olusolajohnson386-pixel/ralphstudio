@@ -14,31 +14,42 @@ export const portfolioItems = [
   { id: 6, title: "Cover Book Mockup", category: "3D Mockups", genre: "Fiction", image: portfolio6, client: "Creative Studio" },
 ];
 
+import serviceCoverDesign from "@/assets/service-cover-design.jpg";
+import serviceTrailer from "@/assets/service-trailer.jpg";
+import serviceMockup from "@/assets/service-mockup.jpg";
+import serviceVisuals from "@/assets/service-visuals.jpg";
+import serviceAnimation from "@/assets/service-animation.jpg";
+
 export const services = [
   {
     title: "Book Cover Design",
     description: "Custom cover designs for fiction and non-fiction that capture the essence of your story and stand out on any shelf or screen.",
     icon: "BookOpen",
+    image: serviceCoverDesign,
   },
   {
     title: "Book Video Trailers",
     description: "Cinematic video trailers that bring your book to life and create buzz before launch day.",
     icon: "Play",
+    image: serviceTrailer,
   },
   {
     title: "3D Mockups",
     description: "Photorealistic 3D book mockups for marketing materials, social media, and author websites.",
     icon: "Box",
+    image: serviceMockup,
   },
   {
     title: "Book Visuals",
     description: "Character art, scene illustrations, maps, and promotional graphics that extend your book's visual world.",
     icon: "Image",
+    image: serviceVisuals,
   },
   {
     title: "2D/3D Animation",
     description: "Dynamic animations for book trailers, social media content, and author branding.",
     icon: "Sparkles",
+    image: serviceAnimation,
   },
 ];
 

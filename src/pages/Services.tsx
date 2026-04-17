@@ -4,6 +4,7 @@ import { BookOpen, Play, Box, Image, Sparkles, ArrowRight, ChevronDown } from "l
 import SectionHeading from "@/components/SectionHeading";
 import { services, faqs } from "@/lib/data";
 import { useState } from "react";
+import servicesHero from "@/assets/services-hero.jpg";
 
 const iconMap: Record<string, React.ElementType> = { BookOpen, Play, Box, Image, Sparkles };
 
@@ -13,24 +14,36 @@ const Services = () => {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="section-padding">
-        <div className="container-wide">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
-            <span className="text-primary font-body text-sm font-semibold tracking-[0.3em] uppercase">Our Services</span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mt-4 leading-tight">
-              Everything Your Book <span className="text-gradient-gold">Needs to Shine</span>
-            </h1>
-            <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
-              From stunning covers to cinematic trailers, we offer a complete suite of visual services designed to make your book impossible to ignore.
-            </p>
-          </motion.div>
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={servicesHero}
+            alt="Cinematic open book with golden light"
+            width={1920}
+            height={896}
+            className="w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/80 to-background" />
+        </div>
+        <div className="relative section-padding">
+          <div className="container-wide">
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
+              <span className="text-primary font-body text-sm font-semibold tracking-[0.3em] uppercase">Our Services</span>
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mt-4 leading-tight">
+                Everything Your Book <span className="text-gradient-gold">Needs to Shine</span>
+              </h1>
+              <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
+                From stunning covers to cinematic trailers, we offer a complete suite of visual services designed to make your book impossible to ignore.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Services Detail */}
       <section className="section-padding bg-card">
         <div className="container-wide">
-          <div className="space-y-16">
+          <div className="space-y-20">
             {services.map((service, i) => {
               const Icon = iconMap[service.icon] || Sparkles;
               const isEven = i % 2 === 0;
@@ -40,14 +53,25 @@ const Services = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className={`flex flex-col md:flex-row items-start gap-8 ${!isEven ? "md:flex-row-reverse" : ""}`}
+                  className={`grid grid-cols-1 md:grid-cols-2 items-center gap-10 ${!isEven ? "md:[&>*:first-child]:order-2" : ""}`}
                 >
-                  <div className="w-20 h-20 bg-primary/10 rounded-sm flex items-center justify-center flex-shrink-0">
-                    <Icon size={32} className="text-primary" />
+                  <div className="relative group overflow-hidden rounded-sm border border-border">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      width={1280}
+                      height={896}
+                      loading="lazy"
+                      className="w-full h-72 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-display text-2xl font-bold mb-3">{service.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed mb-4">{service.description}</p>
+                  <div>
+                    <div className="w-14 h-14 bg-primary/10 rounded-sm flex items-center justify-center mb-5">
+                      <Icon size={24} className="text-primary" />
+                    </div>
+                    <h3 className="font-display text-2xl md:text-3xl font-bold mb-3">{service.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed mb-5">{service.description}</p>
                     <Link
                       to="/contact"
                       className="text-primary font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all"
