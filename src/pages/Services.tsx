@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { BookOpen, Play, Box, Image, Sparkles, ArrowRight, ChevronDown } from "lucide-react";
+import { BookOpen, Play, Box, Image, Sparkles, ArrowRight, ChevronDown, Film } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import { services, faqs } from "@/lib/data";
 import { useState } from "react";
@@ -47,6 +47,8 @@ const Services = () => {
             {services.map((service, i) => {
               const Icon = iconMap[service.icon] || Sparkles;
               const isEven = i % 2 === 0;
+              const isTrailer = service.title === "Book Video Trailers";
+              const isAnimation = service.title === "2D/3D Animation";
               return (
                 <motion.div
                   key={service.title}
@@ -65,6 +67,76 @@ const Services = () => {
                       className="w-full h-72 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+
+                    {isTrailer && (
+                      <>
+                        <motion.div
+                          className="absolute inset-0 pointer-events-none"
+                          style={{
+                            background:
+                              "linear-gradient(110deg, transparent 30%, hsl(var(--primary) / 0.18) 50%, transparent 70%)",
+                          }}
+                          animate={{ x: ["-100%", "100%"] }}
+                          transition={{ duration: 3.5, repeat: Infinity, ease: "linear" }}
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                          <motion.div
+                            className="relative w-20 h-20 rounded-full bg-primary/20 backdrop-blur-sm flex items-center justify-center border border-primary/40"
+                            animate={{ scale: [1, 1.08, 1] }}
+                            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                          >
+                            <motion.span
+                              className="absolute inset-0 rounded-full border border-primary/60"
+                              animate={{ scale: [1, 1.6], opacity: [0.6, 0] }}
+                              transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut" }}
+                            />
+                            <Play size={28} className="text-primary fill-primary ml-1" />
+                          </motion.div>
+                        </div>
+                        <motion.div
+                          className="absolute top-3 left-3 flex items-center gap-1.5 px-2 py-1 rounded-sm bg-background/70 backdrop-blur-sm pointer-events-none"
+                          animate={{ opacity: [1, 0.4, 1] }}
+                          transition={{ duration: 1.4, repeat: Infinity }}
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-destructive" />
+                          <span className="text-[10px] font-semibold tracking-widest text-foreground">REC</span>
+                        </motion.div>
+                      </>
+                    )}
+
+                    {isAnimation && (
+                      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                        <motion.div
+                          className="absolute top-1/2 left-1/2 w-40 h-40 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/40"
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+                        >
+                          <span className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary))]" />
+                        </motion.div>
+                        <motion.div
+                          className="absolute top-1/2 left-1/2 w-24 h-24 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/30"
+                          animate={{ rotate: -360 }}
+                          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                        >
+                          <span className="absolute top-1/2 -right-1 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
+                        </motion.div>
+                        {[
+                          { x: "20%", y: "30%", d: 2.4 },
+                          { x: "75%", y: "25%", d: 3.1 },
+                          { x: "30%", y: "75%", d: 2.8 },
+                          { x: "80%", y: "70%", d: 2.2 },
+                          { x: "55%", y: "15%", d: 3.4 },
+                        ].map((p, idx) => (
+                          <motion.span
+                            key={idx}
+                            className="absolute w-1 h-1 rounded-full bg-primary"
+                            style={{ left: p.x, top: p.y }}
+                            animate={{ y: [0, -12, 0], opacity: [0.3, 1, 0.3] }}
+                            transition={{ duration: p.d, repeat: Infinity, ease: "easeInOut", delay: idx * 0.3 }}
+                          />
+                        ))}
+                      </div>
+                    )}
                   </div>
                   <div>
                     <div className="w-14 h-14 bg-primary/10 rounded-sm flex items-center justify-center mb-5">
