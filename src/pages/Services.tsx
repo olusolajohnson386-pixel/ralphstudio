@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { BookOpen, Play, Box, Image, Sparkles, ArrowRight, ChevronDown } from "lucide-react";
+import { BookOpen, Play, Box, Image, Sparkles, ArrowRight, ChevronDown, Film } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import { services, faqs } from "@/lib/data";
 import { useState } from "react";
